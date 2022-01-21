@@ -1,0 +1,1 @@
+Ce projet sous Symfony requiert un environnement avec PHP8.0, SQLite, Composer, NPM, Webpack Encore, Bootstrap, jQuery
