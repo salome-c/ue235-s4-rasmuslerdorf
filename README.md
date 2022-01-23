@@ -30,7 +30,7 @@ i
 
 DocumentRoot /var/www/html/ → DocumentRoot /var/www/html/public
 
-<Directory /> → <Directory /var/www/html/public>
+<Directory / > → <Directory /var/www/html/public>
 
 ------------------------------------------------------
 
