@@ -62,6 +62,14 @@ npm run build
 
 ------------------------------------------------------
 
+Si l'ajout ou la modification d'un article ou d'une catégorie
+
+génère une erreur SQL (read only) alors dans Powershell :
+
+chmod 777 /var/www/html/var/blog.db
+
+------------------------------------------------------
+
 Plus qu'à faire des commit/push etc. à partir du dossier du projet
 
 (en l'ouvrant dans Sublime Merge en tant que repo local, par exemple)
