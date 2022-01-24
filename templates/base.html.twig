@@ -13,13 +13,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <ul class="nav justify-content-end navbar-nav">
-                    {% if articles is defined %}
+                    {% if articles.getArticles() is defined %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Articles
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for article in articles %}
+                            {% for article in articles.getArticles() %}
                             <li>
                                 <a class="dropdown-item" href="{{ path('article_show', {'id': article.id}) }}">{{ article.title }}</a>
                             </li>
@@ -31,13 +31,13 @@
                         <a class="nav-link" href="{{ path('article_index') }}">Articles</a>
                     </li>
                     {% endif %}
-                    {% if categories is defined %}
+                    {% if categories.getCategories() is defined %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Catégories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for category in categories %}
+                            {% for category in categories.getCategories() %}
                             <li>
                                 <a class="dropdown-item" href="{{ path('category_show', {'id': category.id}) }}">{{ category.name }}</a>
                             </li>
