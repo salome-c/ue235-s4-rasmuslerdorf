@@ -14,8 +14,8 @@
                 </button>
                 <ul class="nav justify-content-end navbar-nav">
 
-                    {% if articles.getArticles() is defined %}
-                    <!-- sous-menu des articles sur toutes les pages sauf l'index des articles -->
+                    {% if allArticles.getArticles() is defined %}
+                    <!-- sous-menu des articles sur toutes les pages -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Articles
@@ -24,24 +24,7 @@
                             <li>
                                 <a class="dropdown-item" href="{{ path('article_index') }}">Tous les articles</a>
                             </li>
-                            {% for article in articles.getArticles() %}
-                            <li>
-                                <a class="dropdown-item" href="{{ path('article_show', {'id': article.id}) }}">{{ article.title }}</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    {% elseif articles is defined %}
-                    <!-- sous-menu des articles sur la page d'index des articles -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Articles
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item" href="{{ path('article_index') }}">Tous les articles</a>
-                            </li>
-                            {% for article in articles %}
+                            {% for article in allArticles.getArticles() %}
                             <li>
                                 <a class="dropdown-item" href="{{ path('article_show', {'id': article.id}) }}">{{ article.title }}</a>
                             </li>
@@ -55,8 +38,8 @@
                     </li>
                     {% endif %}
 
-                    {% if categories.getCategories() is defined %}
-                    <!-- sous-menu des catégories sur toutes les pages sauf l'index des catégories -->
+                    {% if allCategories.getCategories() is defined %}
+                    <!-- sous-menu des catégories sur toutes les pages -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Catégories
@@ -65,24 +48,7 @@
                             <li>
                                 <a class="dropdown-item" href="{{ path('category_index') }}">Toutes les catégories</a>
                             </li>
-                            {% for category in categories.getCategories() %}
-                            <li>
-                                <a class="dropdown-item" href="{{ path('category_show', {'id': category.id}) }}">{{ category.name }}</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    {% elseif categories is defined %}
-                    <!-- sous-menu des catégories sur la page d'index des catégories -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Catégories
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item" href="{{ path('category_index') }}">Toutes les catégories</a>
-                            </li>
-                            {% for category in categories %}
+                            {% for category in allCategories.getCategories() %}
                             <li>
                                 <a class="dropdown-item" href="{{ path('category_show', {'id': category.id}) }}">{{ category.name }}</a>
                             </li>
