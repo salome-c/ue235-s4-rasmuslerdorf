@@ -10,15 +10,31 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface; // Appel du bundle KNP Paginator
 
 #[Route('/article')]
 class ArticleController extends AbstractController
 {
     #[Route('/', name: 'article_index', methods: ['GET'])]
-    public function index(ArticleRepository $articleRepository): Response
+    // public function index(ArticleRepository $articleRepository): Response
+    // {
+    //     return $this->render('article/index.html.twig', [
+    //         'articles' => $articleRepository->findAll(),
+    //     ]);
+    // }
+    public function index(Request $request, PaginatorInterface $paginator) // Pagination
     {
+        // Méthode findAll qui permet de récupérer toutes les données
+        $donnees = $this->getDoctrine()->getRepository(Article::class)->findAll();
+
+        $articles = $paginator->paginate(
+            $donnees, // Requête contenant les données à paginer
+            $request->query->getInt('page', 1), // Numéro de la page en cours passé dans l'URL
+            1 // Nombre de résultats par page
+        );
+        
         return $this->render('article/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+            'articles' => $articles,
         ]);
     }
 

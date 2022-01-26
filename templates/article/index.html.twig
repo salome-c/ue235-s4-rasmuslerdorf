@@ -43,6 +43,9 @@
             </tbody>
         </table>
 
+        <!-- pagination -->
+        {{ knp_pagination_render(articles) }}
+
         <div class="d-grid gap-2">
             <a class="btn btn-primary" role="button" href="{{ path('article_new') }}">Ajouter un article</a>
         </div>
