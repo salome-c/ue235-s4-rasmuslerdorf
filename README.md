@@ -75,3 +75,19 @@ Plus qu'à faire des commit/push etc. à partir du dossier du projet
 (en l'ouvrant dans Sublime Merge en tant que repo local, par exemple)
 
 :)
+
+------------------------------------------------------
+
+Pagination avec KNP Paginator
+
+Je ne sais pas si ce sera nécessaire mais au cas où chacun doit l'installer de son côté :
+
+cd /var/www/html
+
+composer require knplabs/knp-paginator-bundle -W
+
+(-W pour l'installer avec toutes ses dépendances)
+
+https://nouvelle-techno.fr/articles/symfony-4-creer-un-blog-pas-a-pas-mettre-en-place-la-pagination
+
+------------------------------------------------------
