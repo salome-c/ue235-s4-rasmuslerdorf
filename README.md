@@ -91,3 +91,12 @@ composer require knplabs/knp-paginator-bundle -W
 https://nouvelle-techno.fr/articles/symfony-4-creer-un-blog-pas-a-pas-mettre-en-place-la-pagination
 
 ------------------------------------------------------
+
+Mise à jour et prise en compte des fichiers CSS et JavaScript dans assets/styles/app.css et assets/app.js.
+Pour que les fichiers CSS et JavaScript soient pris en compte :
+
+cd /var/www/html
+
+npm run build
+
+------------------------------------------------------

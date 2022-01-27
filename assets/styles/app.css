@@ -1,1 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap";
+
+.pagination{
+    justify-content: center;
+}
