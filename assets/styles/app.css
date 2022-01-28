@@ -7,3 +7,7 @@
 .paginationMax {
     text-align: center;
 }
+
+#custom .bg-primary {
+    background-color: #B0413E !important;
+}
