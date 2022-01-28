@@ -101,7 +101,7 @@ npm run build
 
 ------------------------------------------------------
 
-L'utilisateur peut choisir le nombre d'articles à afficher dans la liste avec un <select>
+L'utilisateur peut choisir le nombre d'articles à afficher dans la liste avec un select
 
 par intégration de jQuery, envoi de variable en URL et traitement par le contrôleur
 
