@@ -48,9 +48,35 @@
             {{ knp_pagination_render(articles) }}
         </div>
 
+        <p class="paginationMax">Afficher
+            <select name="max" id="max">
+                <option>--</option>
+                <option value="1">5</option>
+                <option value="2">10</option>
+                <option value="3">50</option>
+            </select>
+        articles par page</p>
+
         <div class="d-grid gap-2">
             <a class="btn btn-primary" role="button" href="{{ path('article_new') }}">Ajouter un article</a>
         </div>
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript">
+
+        // lors d'une modification sur la liste "max" dans la liste des articles
+        // envoyer la valeur sélectionnée en URL (pour traitement par le contrôleur)
+        $('#max').change(function() {
+            if($.isNumeric($('#max').val())) {
+                {% set currentPath = path(app.request.attributes.get('_route')) %}
+                var url = "{{path(app.request.attributes.get('_route'),{'max': '_itemNum'})}}";
+                var item = $('#max').val();
+                jQuery(location).attr('href', url.replace('_itemNum',item ));
+            }
+        });
+
+    </script>
 {% endblock %}

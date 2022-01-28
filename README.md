@@ -100,3 +100,15 @@ cd /var/www/html
 npm run build
 
 ------------------------------------------------------
+
+L'utilisateur peut choisir le nombre d'articles à afficher dans la liste avec un <select>
+
+par intégration de jQuery, envoi de variable en URL et traitement par le contrôleur
+
+https://stackoverflow.com/questions/22295112/dynamic-limit-per-page-knp-pagination
+
+https://grafikart.fr/forum/24959
+
+(+ modification CSS = cd /var/www/html + npm run build)
+
+------------------------------------------------------

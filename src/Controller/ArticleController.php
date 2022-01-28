@@ -16,21 +16,46 @@ use Knp\Component\Pager\PaginatorInterface; // Appel du bundle KNP Paginator
 class ArticleController extends AbstractController
 {
     #[Route('/', name: 'article_index', methods: ['GET'])]
-    // public function index(ArticleRepository $articleRepository): Response
-    // {
-    //     return $this->render('article/index.html.twig', [
-    //         'articles' => $articleRepository->findAll(),
-    //     ]);
-    // }
     public function index(Request $request, PaginatorInterface $paginator) // Pagination
     {
         // Méthode findAll qui permet de récupérer toutes les données
         $donnees = $this->getDoctrine()->getRepository(Article::class)->findAll();
 
+        // Définition du nombre maximum d'articles à afficher par page à partir des données en URL
+        $max;
+
+        if (count($_GET) && array_key_exists('max', $_GET)) {
+
+            if (!empty($_GET['max'])) {
+
+                if (is_numeric($_GET['max'])) {
+                
+                    $max = strip_tags($_GET['max']);
+
+                } else {
+
+                    echo 'Le maximum d\'articles à afficher n\'est pas un nombre';
+
+                }
+
+            } else {
+
+                echo 'Le maximum d\'articles à afficher est vide';
+
+            }
+            
+        } else {
+
+            // Valeur par défaut
+            $max = 5;
+
+        }
+
+        // Pagination
         $articles = $paginator->paginate(
             $donnees, // Requête contenant les données à paginer
             $request->query->getInt('page', 1), // Numéro de la page en cours passé dans l'URL
-            1 // Nombre de résultats par page
+            $max // Nombre de résultats par page
         );
         
         return $this->render('article/index.html.twig', [
