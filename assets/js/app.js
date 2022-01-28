@@ -5,17 +5,17 @@
 $(document).ready(function() {
 
     $('#article_title').keyup(function() {
-        updateTitre("article_title", "Titre");
+        updateFormWhenInput("article_title", "Titre");
     });
     $('#article_content').keyup(function() {
-        updateTitre("article_content", "Contenu");
+        updateFormWhenInput("article_content", "Contenu");
     });
     $('#category_name').keyup(function() {
-        updateTitre("category_name", "Nom");
+        updateFormWhenInput("category_name", "Nom");
     });
 
 
-    function updateTitre(article_id, titre) {
+    function updateFormWhenInput(article_id, titre) {
         var num_mots = 0;
         var split = $("#" + article_id).val().split(' ');
 
@@ -40,17 +40,17 @@ $(document).ready(function() {
 
     // au moment du clic sur le bouton "Enregistrer" de création d'un article
     $('#creer-article').on('click', function(){
-        test("#article_title", "#article_content")
+        updateFormWhenSubmit("#article_title", "#article_content")
 
     });
 
     // au moment du clic sur le bouton "Enregistrer" de création d'une catégorie
     $('#creer-categorie').on('click', function(){
-        test("#category_name", null)
+        updateFormWhenSubmit("#category_name", null)
     });
 
 
-    function test(id, id2) {
+    function updateFormWhenSubmit(id, id2) {
         var id_value = $(id).val();
 
         if (id_value.length == 0) {
