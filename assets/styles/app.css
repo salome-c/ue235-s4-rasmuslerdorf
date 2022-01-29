@@ -8,6 +8,43 @@
     text-align: center;
 }
 
+/* Template custom basé sur Bootstrpap */
+
+/* Navbar*/
+#custom nav {
+    margin-bottom: 2rem;
+}
+/* font logo */
+#custom .navbar-brand {
+    font-weight: bold !important;
+    color: #A38BD9 !important;
+}
+#custom .navbar-brand:hover {
+    color: #000000 !important;
+    transition: .4s !important;
+}
+/*** Background color principal ***/
 #custom .bg-primary {
-    background-color: #B0413E !important;
+    background-color: #F2C2F2 !important;
+}
+/*** couleurs des liens ***/
+#custom .nav-link {
+    color: #A38BD9 !important;
+}
+#custom .nav-link:hover {
+    color: #000000 !important;
+    transition: .4s !important;
+}
+/*** Color dropdown menu ***/
+#custom .dropdown-menu {
+    background-color: #F2C2F2 !important;
+}
+#custom .dropdown-item {
+    background-color: #F2C2F2 !important;
+    color: #A38BD9 !important;
+}
+#custom  .dropdown-item:hover {
+    background-color: #A38BD9 !important;
+    color: #000000 !important;
+    transition: .4s !important;
 }
