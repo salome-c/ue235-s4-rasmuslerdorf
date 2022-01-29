@@ -1,9 +1,12 @@
-// JS perso
+// JS perso en jQuery
 /**
  * On attend que le DOM soit totalement chargé
  */
 $(document).ready(function() {
 
+    /********************************* JS des formulaires d'ajouts / d'éditions d'articles et de catégories ********************************/
+
+    // quand l'utilisateur écrit dans les imputs (keyup)
     $('#article_title').keyup(function() {
         updateFormWhenInput("article_title", "Titre");
     });
@@ -14,10 +17,10 @@ $(document).ready(function() {
         updateFormWhenInput("category_name", "Nom");
     });
 
-
-    function updateFormWhenInput(article_id, titre) {
+    // fonction de mise à jour des indications (nombre de mots, couleur et placeholder)
+    function updateFormWhenInput(id, titre) {
         var num_mots = 0;
-        var split = $("#" + article_id).val().split(' ');
+        var split = $("#" + id).val().split(' ');
 
         for (var i = 0; i < split.length; i++) {
             if (split[i] != "") {
@@ -26,15 +29,15 @@ $(document).ready(function() {
         }
 
         if (num_mots === 0) {
-            $("#" + article_id).css('backgroundColor', '#F2CEF2'); // couleur en cas de d'échec
-            $("#" + article_id).attr('placeholder', 'Merci de remplir ce champ.');
+            $("#" + id).css('backgroundColor', '#F2CEF2'); // couleur en cas de d'échec
+            $("#" + id).attr('placeholder', 'Merci de remplir ce champ.');
         }
         else {
-            $("#" + article_id).css('backgroundColor', '#CED2F2'); // couleur en cas réussite
-            $("#" + article_id).attr('placeholder', '');
+            $("#" + id).css('backgroundColor', '#CED2F2'); // couleur en cas réussite
+            $("#" + id).attr('placeholder', '');
         }
 
-        $("[for='" + article_id + "']").text(titre + ' - ' + num_mots + ' mots');
+        $("[for='" + id + "']").text(titre + ' - ' + num_mots + ' mots');
     }
 
 
@@ -49,7 +52,7 @@ $(document).ready(function() {
         updateFormWhenSubmit("#category_name", null)
     });
 
-
+    // fonction quand l'utilisateur veut submit le formulaire : mise à jour des indications (couleur et placeholder)
     function updateFormWhenSubmit(id, id2) {
         var id_value = $(id).val();
 
@@ -76,4 +79,5 @@ $(document).ready(function() {
         }
     }
 
+    /*********************************************** Fin ************************************************* */
 });
