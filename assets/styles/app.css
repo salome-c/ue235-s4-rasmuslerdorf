@@ -11,40 +11,61 @@
 /* Template custom basé sur Bootstrpap */
 
 /* Navbar*/
-#custom nav {
+nav {
     margin-bottom: 2rem;
 }
 /* font logo */
-#custom .navbar-brand {
+.navbar-brand {
     font-weight: bold !important;
     color: #C3B6F2 !important;
-}
-#custom .navbar-brand:hover {
-    color: #FFFFFF !important;
     transition: .4s !important;
+}
+.navbar-brand:hover {
+    color: #FFFFFF !important;
 }
 /*** Background color principal ***/
-#custom .bg-primary {
-    background-color: #464B59 !important;
+.bg-primary {
+    background-color: #2C3034 !important;
 }
 /*** couleurs des liens ***/
-#custom .nav-link {
+.nav-link {
     color: #C3B6F2 !important;
-}
-#custom .nav-link:hover {
-    color: #FFFFFF !important;
     transition: .4s !important;
+}
+.nav-link:hover {
+    color: #FFFFFF !important;
 }
 /*** Color dropdown menu ***/
-#custom .dropdown-menu {
-    background-color: #464B59 !important;
+.dropdown-menu {
+    background-color: #2C3034 !important;
 }
-#custom .dropdown-item {
-    background-color: #464B59 !important;
+.dropdown-item {
+    background-color: #2C3034 !important;
     color: #C3B6F2 !important;
-}
-#custom  .dropdown-item:hover {
-    background-color: #C3B6F2 !important;
-    color: #464B59 !important;
     transition: .4s !important;
+}
+.dropdown-item:hover {
+    background-color: #C3B6F2 !important;
+    color: #2C3034 !important;
+}
+/* btn */
+.btn-outline-primary {
+    border: #C3B6F2 solid 1px !important;
+    color: #C3B6F2 !important;
+    transition: .4s !important;
+}
+.btn-outline-primary:hover {
+    background-color: #C3B6F2 !important;
+    color: #2C3034 !important;
+}
+.btn-primary {
+    border: #2C3034 solid 1px !important;
+    background-color: #C3B6F2 !important;
+    color: #2C3034 !important;
+    transition: .4s !important;
+}
+.btn-primary:hover {
+    border: #C3B6F2 solid 1px !important;
+    background-color: #2C3034 !important;
+    color: #C3B6F2 !important;
 }
