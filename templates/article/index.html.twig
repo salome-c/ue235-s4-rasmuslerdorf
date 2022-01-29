@@ -63,12 +63,11 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script type="text/javascript">
 
         // lors d'une modification sur la liste "max" dans la liste des articles
         // envoyer la valeur sélectionnée en URL (pour traitement par le contrôleur)
+        // (pas trouvé comment externaliser ce script en raison des variables twig)
         $('#max').change(function() {
             if($.isNumeric($('#max').val())) {
                 {% set currentPath = path(app.request.attributes.get('_route')) %}
