@@ -78,9 +78,9 @@ Plus qu'à faire des commit/push etc. à partir du dossier du projet
 
 ------------------------------------------------------
 
-Pagination avec KNP Paginator
+Pagination dans la liste des articles avec KNP Paginator
 
-Je ne sais pas si ce sera nécessaire mais au cas où chacun doit l'installer de son côté :
+Installation nécessaire :
 
 cd /var/www/html
 
@@ -88,11 +88,24 @@ composer require knplabs/knp-paginator-bundle -W
 
 (-W pour l'installer avec toutes ses dépendances)
 
+NB : le menu de pagination ne s'affiche pas si tous les articles sont déjà affichés dans la page
+
 https://nouvelle-techno.fr/articles/symfony-4-creer-un-blog-pas-a-pas-mettre-en-place-la-pagination
 
 ------------------------------------------------------
 
-Mise à jour et prise en compte des fichiers CSS et JavaScript dans assets/styles/app.css et assets/app.js.
+L'utilisateur peut choisir le nombre d'articles à afficher dans la liste avec un select
+
+par intégration de jQuery et envoi de variable en URL pour traitement par le contrôleur
+
+https://stackoverflow.com/questions/22295112/dynamic-limit-per-page-knp-pagination
+
+https://grafikart.fr/forum/24959
+
+------------------------------------------------------
+
+Mise à jour et prise en compte des fichiers CSS et JavaScript dans assets/styles/app.css et assets/app.js
+
 Pour que les fichiers CSS et JavaScript soient pris en compte :
 
 cd /var/www/html
@@ -101,14 +114,3 @@ npm run build
 
 ------------------------------------------------------
 
-L'utilisateur peut choisir le nombre d'articles à afficher dans la liste avec un select
-
-par intégration de jQuery, envoi de variable en URL et traitement par le contrôleur
-
-https://stackoverflow.com/questions/22295112/dynamic-limit-per-page-knp-pagination
-
-https://grafikart.fr/forum/24959
-
-(+ modification CSS = cd /var/www/html + npm run build)
-
-------------------------------------------------------
