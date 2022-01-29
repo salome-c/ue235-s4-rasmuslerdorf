@@ -48,7 +48,7 @@ nav {
     background-color: #C3B6F2 !important;
     color: #2C3034 !important;
 }
-/* btn */
+/*** btn ***/
 .btn-outline-primary {
     border: #C3B6F2 solid 1px !important;
     color: #C3B6F2 !important;
@@ -59,13 +59,17 @@ nav {
     color: #2C3034 !important;
 }
 .btn-primary {
-    border: #2C3034 solid 1px !important;
+    border: none !important;
     background-color: #C3B6F2 !important;
     color: #2C3034 !important;
     transition: .4s !important;
 }
 .btn-primary:hover {
-    border: #C3B6F2 solid 1px !important;
     background-color: #2C3034 !important;
     color: #C3B6F2 !important;
+}
+/*** input ***/
+input:focus, textarea:focus, .form-select:focus {
+    box-shadow: 0 0 0 .25rem rgba(195,182,242,.70) !important;
+    border: none !important;
 }
